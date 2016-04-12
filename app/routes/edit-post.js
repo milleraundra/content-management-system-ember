@@ -13,6 +13,10 @@ export default Ember.Route.extend({
       });
       post.save();
       this.transitionTo('admin');
+    },
+    delete(post) {
+      post.destroyRecord();
+      this.transitionTo('admin');
     }
   }
 });
