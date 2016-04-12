@@ -1,8 +1,8 @@
 import Model from 'ember-data/model';
 
 export default Model.extend({
-  title: DS.attr(),
-  content: DS.attr(),
-  author: DS.attr(),
-  site: DS.belongsTo('site', { async: true })
+  title: Model.attr(),
+  content: Model.attr(),
+  author: Model.attr(),
+  site: Model.belongsTo('site', { async: true })
 });
