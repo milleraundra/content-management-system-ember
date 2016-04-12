@@ -1,6 +1,7 @@
 import Ember from 'ember';
 
 export default Ember.Route.extend({
+  userModel: Ember.inject.service(),
   beforeModel: function() {
     return this.get("session").fetch().catch(function() {});
   },
@@ -11,14 +12,15 @@ export default Ember.Route.extend({
         email: email,
         password: password
       }).then(function(data) {
-        // console.log(data.currentUser);
-      });
+        this.store.findRecord('user', data.uid).then(function(record) {
+          console.log(this.userModel.get('currentUser'));
+        }.bind(this));
+      }.bind(this));
     },
     signOut: function() {
       this.get("session").close();
     },
     createUser(user) {
-      console.log('fired');
       var newUser = this.store.createRecord('user', user);
       newUser.save();
     }

@@ -9,14 +9,13 @@ export default Ember.Component.extend({
       ref.createUser({
         email: this.get('email'),
         password : this.get('password')
-      }, function(error, userData) {
+      }, function(error) {
         if (error) {
           alert("Error creating user:", error);
         } else {
           console.log("Successfully created user account for authentication.");
         }
       }).then(function(userData){
-        debugger;
         var user = {
           id: userData.uid,
           username: username

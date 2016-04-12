@@ -1,5 +1,7 @@
 {{#if session.isAuthenticated}}
   Logged in as {{session.currentUser.email}}
+  {{log session.currentUser}}
+  {{log userModel }}
   <button {{action "signOut"}}>Sign out</button>
   {{outlet}}
 {{else}}
