@@ -1,8 +1,5 @@
 <h2>Admin Dashland</h2>
-<p>list of post names to click on to edit</p>
+
+{{admin-post-list post=model.posts}}
 <hr>
 {{#link-to 'new-post'}}Add New Post{{/link-to}}
-
-{{#each model.post as |post|}}
-  {{post.title}}
-{{/each}}
