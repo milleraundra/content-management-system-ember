@@ -1,9 +1,12 @@
 <form>
-  <label for="title">Site Title</label>
-  {{input value=title id="title"}}
-
-  <label for="admin">Admin Name</label>
-  {{input value=admin id="admin"}}
-  
+  <div>
+    <label for="title">Site Title</label>
+    {{input value=title id="title"}}
+  </div>
+  <br>
+  <div>
+    <label for="admin">Admin Name</label>
+    {{input value=admin id="admin"}}
+  </div>
   <button {{action 'save'}}>Submit</button>
 </form>
