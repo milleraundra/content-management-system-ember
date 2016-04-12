@@ -1,12 +1,12 @@
 
 {{new-user}}
-<!-- {{#if session.isAuthenticated}}
-  Logged in as {{session.currentUser.displayName}}
+{{#if session.isAuthenticated}}
+  Logged in as {{session.currentUser.id}}
   <button {{action "signOut"}}>Sign out</button>
   {{outlet}}
 {{else}}
-  <button {{action "signIn" "password"}}>Sign in</button>
-{{/if}} -->
+  {{user-login signIn="signIn"}}
+{{/if}}
 
 {{#link-to 'index'}}<h1>ContentLand</h1>{{/link-to}}
 
