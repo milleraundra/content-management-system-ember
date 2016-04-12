@@ -1,3 +1,4 @@
+
 {{new-user}}
 <!-- {{#if session.isAuthenticated}}
   Logged in as {{session.currentUser.displayName}}
@@ -6,3 +7,7 @@
 {{else}}
   <button {{action "signIn" "password"}}>Sign in</button>
 {{/if}} -->
+
+{{#link-to 'index'}}<h1>ContentLand</h1>{{/link-to}}
+
+{{outlet}}
