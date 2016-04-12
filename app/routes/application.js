@@ -11,12 +11,16 @@ export default Ember.Route.extend({
         email: email,
         password: password
       }).then(function(data) {
-        debugger;
-        return data.currentUser;
+        // console.log(data.currentUser);
       });
     },
     signOut: function() {
       this.get("session").close();
+    },
+    createUser(user) {
+      console.log('fired');
+      var newUser = this.store.createRecord('user', user);
+      newUser.save();
     }
   }
 });
