@@ -1,0 +1,5 @@
+{{#each site as |site|}}
+  <div>
+    {{#link-to 'edit-site' site}}{{site.title}}{{/link-to}}
+  </div>
+{{/each}}
