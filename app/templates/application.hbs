@@ -14,6 +14,7 @@
           {{#paper-item}}Logged in as {{session.currentUser.email}}{{/paper-item}}
           {{#paper-button warn=true action="signOut"}}Sign out{{/paper-button}}
           {{#paper-item action="transitionTo" param="admin"}}My Sites{{/paper-item}}
+          {{#paper-item action="transitionTo" param="new-site"}}Create new site{{/paper-item}}
         {{else}}
           {{user-login signIn="signIn"}}
           {{new-user createUser="createUser"}}
