@@ -1,7 +1,7 @@
 {{#if session.isAuthenticated}}
   Logged in as {{session.currentUser.email}}
   {{log session.currentUser}}
-  {{log userModel }}
+  {{log session.uid}}
   <button {{action "signOut"}}>Sign out</button>
   {{outlet}}
 {{else}}
@@ -10,5 +10,3 @@
 {{/if}}
 
 {{#link-to 'index'}}<h1>ContentLand</h1>{{/link-to}}
-
-{{outlet}}
