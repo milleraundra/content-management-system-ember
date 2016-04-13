@@ -1,8 +1,6 @@
 import Model from 'ember-data/model';
 
 export default Model.extend({
-  username: Model.attr(),
-  password: Model.attr(),
-  sites: Model.hasMany('site', { async: true })
-
+  username: DS.attr(),
+  sites: DS.hasMany('site', { async: true })
 });
