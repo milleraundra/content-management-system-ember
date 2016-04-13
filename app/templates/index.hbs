@@ -1,5 +1,5 @@
 {{#each model as |site|}}
-  {{site.title}}
+  {{#link-to 'site' site.id}}{{site.title}}{{/link-to}}
   <!-- add link to live site and button to login to admin panel for each -->
   <hr>
 {{/each}}
