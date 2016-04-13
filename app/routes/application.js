@@ -1,4 +1,5 @@
 import Ember from 'ember';
+import Firebase from 'firebase';
 
 export default Ember.Route.extend({
   userModel: Ember.inject.service(),
@@ -12,17 +13,37 @@ export default Ember.Route.extend({
         email: email,
         password: password
       }).then(function(data) {
-        this.store.findRecord('user', data.uid).then(function(record) {
-          console.log(this.userModel.get('currentUser'));
-        }.bind(this));
-      }.bind(this));
+          console.log(data.currentUser);
+        });
     },
+
     signOut: function() {
       this.get("session").close();
     },
-    createUser(user) {
-      var newUser = this.store.createRecord('user', user);
-      newUser.save();
+
+    createUser: function(username, email, password) {
+      var ref = new Firebase("https://ember-cms.firebaseio.com/");
+      var _this = this;
+      ref.createUser({
+        email: email,
+        password: password
+      }, function(error, userData){
+        if (error) {
+          alert(error);
+        } else {
+          _this.get('session ').open('firebase', {
+            provider: 'password',
+            'email': email,
+            'password': password
+          }).then(function(){
+            var user = _this.store.createRecord('user', {
+              id: userData.uid,
+              username: username
+            });
+            user.save();
+          });
+        }
+      });
     }
   }
 });
