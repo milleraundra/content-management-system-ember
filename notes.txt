@@ -1,6 +1,10 @@
-- As ANY user, I want to visit the index and see a list of all sites and a button for admin login.
+
   - if I click a site, I'm taken to the public view of that site (fully functional)
   - As an admin user, I can click "admin login" (component), login OR create a new account (different button), and arrive at my Admin Dashland (route) listing MY sites (admin-site-list), and a button to add a new site (new-site).
   - IF I'm already logged in as an admin, there is a button "Go to Admin" to take me to Admin Dashland
     - IF I click a site in Admin Dashland, I'm taken to a route listing that site's posts (admin-post-list), and the option to add a new post (new-post), and a button to edit the site (edit-site).
     - IF I click on a post, I'm taken to the edit post page (edit-post).
+
+
+DONE:
+- As ANY user, I want to visit the index and see a list of all sites and a button for admin login. 

@@ -8,9 +8,9 @@ const Router = Ember.Router.extend({
 Router.map(function() {
   this.route('new-site');
   this.route('new-post');
-  this.route('admin', {path: '/admin/:user.id'});
-  this.route('edit-post', {path: '/edit-post/:post.id'});
-  this.route('edit-site', {path: '/edit-site/:site.id'});
+  this.route('admin');
+  this.route('edit-post', {path: '/edit-post/:post_id'});
+  this.route('edit-site', {path: '/edit-site/:site_id'});
 });
 
 export default Router;

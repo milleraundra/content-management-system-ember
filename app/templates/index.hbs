@@ -1,8 +1,6 @@
-{{#each model.sites as |site|}}
+{{#each model as |site|}}
   {{site.title}}
   <!-- add link to live site and button to login to admin panel for each -->
   <hr>
 {{/each}}
 {{#link-to 'new-site'}}Add new site{{/link-to}}
-
-{{log model.user.username}}

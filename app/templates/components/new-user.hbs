@@ -1,9 +1,13 @@
-<form>
-  <label for="email">Email</label>
-  {{input value=email type="email"}}
-  <label for="username">Username</label>
-  {{input value=username type="text"}}
-  <label for="password">Password</label>
-  {{input value=password type="password"}}
-  <button {{action 'newUser'}}>Create User</button>
-</form>
+{{#if newUserForm}}
+  <form>
+    <label for="email">Email</label>
+    {{input value=email type="email"}}
+    <label for="username">Username</label>
+    {{input value=username type="text"}}
+    <label for="password">Password</label>
+    {{input value=password type="password"}}
+    <button {{action 'newUser'}}>Create User</button>
+  </form>
+{{else}}
+  <button {{action 'createUserFormToggle'}}>Create Account</button>
+{{/if}}

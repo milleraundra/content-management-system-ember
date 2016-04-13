@@ -1,0 +1,6 @@
+get site-list Component
+add query for sites to model in admin.js
+pass sites down to list Component
+loop through and display
+
+remove post-list component from admin.hbs
