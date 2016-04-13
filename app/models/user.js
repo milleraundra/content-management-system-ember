@@ -1,6 +1,6 @@
-import Model from 'ember-data/model';
+import DS from 'ember-data';
 
-export default Model.extend({
+export default DS.Model.extend({
   username: DS.attr(),
   sites: DS.hasMany('site', { async: true })
 });
