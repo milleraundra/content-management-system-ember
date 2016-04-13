@@ -2,10 +2,10 @@ import Ember from 'ember';
 import Firebase from 'firebase';
 
 export default Ember.Route.extend({
-  userModel: Ember.inject.service(),
   beforeModel: function() {
     return this.get("session").fetch().catch(function() {});
   },
+
   actions: {
     signIn: function(email, password, provider) {
       this.get("session").open("firebase", {
@@ -14,12 +14,13 @@ export default Ember.Route.extend({
         password: password
       }).then(function(data) {
           console.log(data.currentUser);
-        });
-      this.transitionTo('admin');
+          this.transitionTo('admin');
+        }.bind(this));
     },
 
     signOut: function() {
       this.get("session").close();
+      this.transitionTo('index');
     },
 
     createUser: function(username, email, password) {
