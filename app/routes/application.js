@@ -15,6 +15,7 @@ export default Ember.Route.extend({
       }).then(function(data) {
           console.log(data.currentUser);
         });
+      this.transitionTo('admin');
     },
 
     signOut: function() {
