@@ -9,14 +9,5 @@ export default Ember.Route.extend({
         equalTo: params.site_id
       })
     });
-  },
-  actions: {
-    saveNewPost(params) {
-      var newPost = this.store.createRecord('post', params);
-      var site = params.site;
-      newPost.save().then(function() {
-        site.get('posts').addObject(newPost);
-      });
-    }
   }
 });

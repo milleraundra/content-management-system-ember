@@ -7,7 +7,7 @@ export default Ember.Component.extend({
         title: this.get('title'),
         author: this.get('author'),
         content: this.get('content'),
-        site: this.get('site')
+        site: this.get('site'),
       };
       this.sendAction('save', params);
     }

@@ -3,4 +3,5 @@
 <h3>Posts:</h3>
 {{admin-post-list posts=model.posts}}
 <br>
-{{new-post site=model.site save="saveNewPost"}}
+
+{{#link-to 'new-post' model.site}}Add New Post{{/link-to}}
