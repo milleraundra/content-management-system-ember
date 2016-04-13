@@ -1,7 +1,13 @@
-<h2>Site: {{model.site.title}}</h2>
+{{#link-to 'admin'}}Admin{{/link-to}} > {{#link-to 'edit-site' model.site.id}}Site{{/link-to}}
 
-<h3>Posts:</h3>
-{{admin-post-list posts=model.posts}}
+
+<h2>Site: {{model.site.title}}</h2>
+{{#if model.posts}}
+  <h3>Posts:</h3>
+  {{admin-post-list posts=model.posts}}
+{{else}}
+<h3>This site has no posts yet.</h3>
+{{/if}}
 <br>
 
 {{#link-to 'new-post' model.site}}Add New Post{{/link-to}}

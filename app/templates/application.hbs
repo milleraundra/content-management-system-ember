@@ -1,9 +1,31 @@
-{{#if session.isAuthenticated}}
-  Logged in as {{session.currentUser.email}}
-  <button {{action "signOut"}}>Sign out</button>
-{{else}}
-  {{user-login signIn="signIn"}}
-  {{new-user createUser="createUser"}}
-{{/if}}
-{{#link-to 'index'}}<h1>ContentLand</h1>{{/link-to}}
-{{outlet}}
+{{#paper-nav-container}}
+  {{#paper-sidenav class="md-sidenav-right md-whiteframe-z2" locked-open="gt-lg"}}
+    {{#paper-toolbar}}
+      <div class="md-toolbar-tools">
+        <div class="logo">
+          Ember CMS
+        </div>
+      </div>
+    {{/paper-toolbar}}
+
+    {{#paper-content}}
+      {{#paper-list}}
+        {{#if session.isAuthenticated}}
+          {{#paper-item}}Logged in as {{session.currentUser.email}}{{/paper-item}}
+          {{#paper-button warn=true action="signOut"}}Sign out{{/paper-button}}
+          {{#paper-item action="transitionTo" param="admin"}}My Sites{{/paper-item}}
+        {{else}}
+          {{user-login signIn="signIn"}}
+          {{new-user createUser="createUser"}}
+        {{/if}}
+        {{paper-divider}}
+        {{#paper-item action="transitionTo" param="index"}}Home{{/paper-item}}
+
+      {{/paper-list}}
+    {{/paper-content}}
+  {{/paper-sidenav}}
+
+  <div layout="column" tabindex="-1" role="main" flex>
+    {{outlet}}
+  </div>
+{{/paper-nav-container}}

@@ -1,5 +1,6 @@
-{{#each model as |site|}}
-  {{#link-to 'site' site.id}}{{site.title}}{{/link-to}}
-  <hr>
-{{/each}}
-{{#link-to 'new-site'}}Add new site{{/link-to}}
+{{#paper-content class="md-padding"}}
+  {{#each model as |site|}}
+    {{#link-to 'site' site.id}}{{site.title}}{{/link-to}}
+  {{/each}}
+  {{#link-to 'new-site'}}Add new site{{/link-to}}
+{{/paper-content}}
