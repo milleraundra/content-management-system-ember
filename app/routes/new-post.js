@@ -12,7 +12,7 @@ export default Ember.Route.extend({
       var site = params.site;
       site.get('posts').addObject(newPost);
       newPost.save().then(function() {
-        return site.save();
+        site.save();
       });
       this.transitionTo('edit-site', site.id);
     }
