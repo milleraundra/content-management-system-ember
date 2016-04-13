@@ -9,5 +9,15 @@ export default Ember.Route.extend({
     //     equalTo: params.site.id
     //   })
     // });
+  },
+  actions: {
+    saveNewPost(params) {
+      var newPost = this.store.createRecord('post', {
+        title: params.title,
+        author: params.author,
+        content: params.content,
+        site: //GET SESSION ID
+      })
+    }
   }
 });
