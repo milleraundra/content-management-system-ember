@@ -6,8 +6,18 @@ export default Ember.Route.extend({
   },
   actions: {
     save(params) {
-      var newSite = this.store.createRecord('site', params);
-      newSite.save();
+      var that = this;
+      var admin = this.get('session').get('uid');
+      this.store.findRecord('user', admin).then(function(record) {
+        var newSite = that.store.createRecord('site', {
+          title: params.title,
+          admin: record
+        });
+        record.get('sites').addObject(newSite);
+        newSite.save().then(function(){
+          record.save();
+        });
+      })
       this.transitionTo('admin');
     }
   }

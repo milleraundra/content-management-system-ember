@@ -1,5 +1,4 @@
 import Ember from 'ember';
-import Firebase from 'firebase';
 
 export default Ember.Component.extend({
   actions: {
