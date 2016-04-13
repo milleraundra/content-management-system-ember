@@ -4,7 +4,14 @@ module.exports = function(environment) {
   var ENV = {
     modulePrefix: 'cms-ember',
     environment: environment,
-    contentSecurityPolicy: { 'connect-src': "'self' https://auth.firebase.com wss://*.firebaseio.com" },
+    contentSecurityPolicy: {
+      'connect-src': "'self' https://auth.firebase.com wss://*.firebaseio.com",
+      'default-src': "'none'",
+      'script-src': "'self'",
+      'font-src': "'self' http://fonts.gstatic.com",
+      'img-src': "'self' data:",
+      'media-src': "'self'"
+    },
     firebase: 'https://ember-cms.firebaseio.com/',
     torii: {
       sessionServiceName: 'session'

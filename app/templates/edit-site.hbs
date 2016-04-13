@@ -1,6 +1,9 @@
 <h2>Site: {{model.site.title}}</h2>
-
-<h3>Posts:</h3>
-{{admin-post-list posts=model.posts}}
+{{#if model.posts}}
+  <h3>Posts:</h3>
+  {{admin-post-list posts=model.posts}}
+{{else}}
+<h3>This site has no posts yet.</h3>
+{{/if}}
 <br>
 {{new-post site=model.site save="saveNewPost"}}

@@ -1,6 +1,17 @@
-{{#each model as |site|}}
-  {{site.title}}
-  <!-- add link to live site and button to login to admin panel for each -->
-  <hr>
-{{/each}}
-{{#link-to 'new-site'}}Add new site{{/link-to}}
+{{#paper-toolbar}}
+  <div class="md-toolbar-tools">
+    {{#paper-sidenav-toggle as |toggle|}}
+      {{#paper-button target=toggle action="toggleMenu" icon-button=true}}{{paper-icon "menu"}}{{/paper-button}}
+    {{/paper-sidenav-toggle}}
+    <span class="md-breadcrumb-page"> {{pageName}} </span>
+  </div>
+{{/paper-toolbar}}
+
+{{#paper-content class="md-padding"}}
+  {{#each model as |site|}}
+    {{site.title}}
+    <!-- add link to live site and button to login to admin panel for each -->
+    <hr>
+  {{/each}}
+  {{#link-to 'new-site'}}Add new site{{/link-to}}
+{{/paper-content}}
