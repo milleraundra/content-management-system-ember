@@ -36,7 +36,6 @@ export default Ember.Route.extend({
             'email': email,
             'password': password
           }).then(function(){
-            debugger;
             var user = _this.store.createRecord('user', {
               id: userData.uid,
               username: username
