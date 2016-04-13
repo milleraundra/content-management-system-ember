@@ -31,11 +31,12 @@ export default Ember.Route.extend({
         if (error) {
           alert(error);
         } else {
-          _this.get('session ').open('firebase', {
+          _this.get('session').open('firebase', {
             provider: 'password',
             'email': email,
             'password': password
           }).then(function(){
+            debugger;
             var user = _this.store.createRecord('user', {
               id: userData.uid,
               username: username
