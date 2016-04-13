@@ -2,12 +2,12 @@ import Ember from 'ember';
 
 export default Ember.Route.extend({
   model() {
-    return this.store.findAll('site');
+    return this.store.findAll('post');
   },
   actions: {
     save(params) {
-      var newSite = this.store.createRecord('site', params);
-      newSite.save();
+      var newPost = this.store.createRecord('post', params);
+      newPost.save();
       this.transitionTo('admin');
     }
   }

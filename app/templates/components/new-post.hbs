@@ -1,0 +1,21 @@
+<h2>Add New Post</h2>
+<form>
+  <div>
+    <label for="title">Post Title</label>
+    {{input value=title id="title"}}
+  </div>
+  <br>
+  <div>
+    <label for="author">Author</label>
+    {{input value=author id="author"}}
+  </div>
+  <br>
+  <div>
+    <label for="content">Content</label>
+    {{textarea value=content id="content"}}
+  </div>
+
+  <button {{action 'save'}}>Publish</button>
+</form>
+
+<h3>(add ability to add categories)</h3>
