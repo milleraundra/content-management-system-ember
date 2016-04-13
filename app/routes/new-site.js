@@ -17,7 +17,7 @@ export default Ember.Route.extend({
         newSite.save().then(function(){
           record.save();
         });
-      })
+      });
       this.transitionTo('admin');
     }
   }
