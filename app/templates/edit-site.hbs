@@ -1,5 +1,6 @@
-<p>{{model.title}}</p>
+<h2>Site: {{model.site.title}}</h2>
 
+<h3>Posts:</h3>
 {{admin-post-list posts=model.posts}}
-
-{{new-post save="saveNewPost"}}
+<br>
+{{new-post site=model.site save="saveNewPost"}}
