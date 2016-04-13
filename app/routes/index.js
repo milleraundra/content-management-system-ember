@@ -2,13 +2,6 @@ import Ember from 'ember';
 
 export default Ember.Route.extend({
   model() {
-  return Ember.RSVP.hash({
-    sites: this.store.query('site', {
-      orderBy: 'admin',
-      equalTo: this.get('session').get('uid')
-    }),
-    posts: this.store.findAll('post'),
-    // user: this.store.findRecord('user', this.get('session').get('uid'))
-    });
+    return this.store.findAll('site');
   }
 });
