@@ -1,5 +1,9 @@
-<label for="email">Email</label>
-{{input value=email type="email"}}
-<label for="password">Password</label>
-{{input value=password type="password"}}
-<button {{action "signIn"}}>Sign in</button>
+{{#if loginForm}}
+  <label for="email">Email</label>
+  {{input value=email type="email"}}
+  <label for="password">Password</label>
+  {{input value=password type="password"}}
+  <button {{action "signIn"}}>Sign in</button>
+{{else}}
+  <button {{action "loginFormToggle"}}>Sign In</button>
+{{/if}}
