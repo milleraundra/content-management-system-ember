@@ -6,5 +6,11 @@ export default Ember.Route.extend({
       orderBy: 'category',
       equalTo: param.site_category
     });
+  },
+  actions: {
+    goToSite(site) {
+      console.log(site.id);
+      this.transitionTo("/" + site.id);
+    },
   }
 });

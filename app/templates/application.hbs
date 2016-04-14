@@ -1,9 +1,9 @@
 {{#paper-nav-container}}
-  {{#paper-sidenav class="sm-sidenav-right md-whiteframe-z2" locked-open="gt-lg"}}
+  {{#paper-sidenav class="md-sidenav-right md-whiteframe-z2" locked-open="gt-lg"}}
     {{#paper-toolbar}}
       <div class="md-toolbar-tools">
         <div class="logo">
-          Ember CMS
+          Blogamole  {{paper-icon "announcement" size="md"}}
         </div>
       </div>
     {{/paper-toolbar}}
@@ -11,21 +11,22 @@
     {{#paper-content}}
       {{#paper-list}}
         {{#if session.isAuthenticated}}
-          {{#paper-item}}<h5>Logged in as {{session.currentUser.email}}</h5> {{paper-button label="Log Out" action="signOut" warn=true raised=true}}{{/paper-item}}
-          {{#paper-item action="transitionTo" param="admin"}}My Sites{{/paper-item}}
-          {{#paper-item action="transitionTo" param="new-site"}}Create new site{{/paper-item}}
+          {{#paper-item}}<h5>Logged in as {{session.currentUser.email}}</h5>{{/paper-item}}
+          {{paper-divider}}
+          {{#paper-item action="transitionTo" param="admin"}}{{paper-icon "account-box" size="sm"}}My Sites{{/paper-item}}
+          {{#paper-item action="transitionTo" param="new-site"}}{{paper-icon "add-to-photos" size="sm"}}Create new site{{/paper-item}}
         {{else}}
           {{create-signin signIn="signIn" createUser="createUser"}}
         {{/if}}
         {{paper-divider}}
-        {{#paper-item action="transitionTo" param="index"}}Home{{/paper-item}}
+        {{#paper-item action="transitionTo" param="index"}}{{paper-icon "home" size="sm"}}Home{{/paper-item}}
         {{paper-divider}}
-        {{#paper-item action="toCategory" param="Food"}}Food{{/paper-item}}
-        {{#paper-item action="toCategory" param="Animals"}}Animals{{/paper-item}}
-        {{#paper-item action="toCategory" param="Fitness"}}Fitness{{/paper-item}}
-        {{#paper-item action="toCategory" param="Politics"}}Politics{{/paper-item}}
-        {{#paper-item action="toCategory" param="Lifestyle"}}Lifestyle{{/paper-item}}
-        {{#paper-item action="toCategory" param="Miscellaneous"}}Miscellaneous{{/paper-item}}
+        {{#paper-item action="toCategory" param="Food"}}{{paper-icon "local-dining" size="sm"}}Food{{/paper-item}}
+        {{#paper-item action="toCategory" param="Animals"}}{{paper-icon "adb" size="sm"}}Animals{{/paper-item}}
+        {{#paper-item action="toCategory" param="Fitness"}}{{paper-icon "directions-bike" size="sm"}}Fitness{{/paper-item}}
+        {{#paper-item action="toCategory" param="Politics"}}{{paper-icon "account-balance" size="sm"}}Politics{{/paper-item}}
+        {{#paper-item action="toCategory" param="Lifestyle"}}{{paper-icon "supervisor-account" size="sm"}}Lifestyle{{/paper-item}}
+        {{#paper-item action="toCategory" param="Miscellaneous"}}{{paper-icon "star" size="sm"}}Miscellaneous{{/paper-item}}        {{#paper-item}}{{paper-button label="Log Out" action="signOut" warn=true raised=true}}{{/paper-item}}
       {{/paper-list}}
     {{/paper-content}}
   {{/paper-sidenav}}
