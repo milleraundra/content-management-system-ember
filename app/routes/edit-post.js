@@ -12,7 +12,7 @@ export default Ember.Route.extend({
         }
       });
       post.save();
-      this.transitionTo('admin');
+      this.transitionTo('edit-site', post.get('site').get('id'));
     },
     delete(post) {
       post.destroyRecord();
