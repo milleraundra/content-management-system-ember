@@ -1,7 +1,6 @@
 - prevent users from manually accessing the admin route
 - styles like crazy
 - comments on posts
-- post edit currently empties post if not content added or deleted - M&M
 
 
 DONE:
@@ -14,3 +13,4 @@ DONE:
 
 - failed attempts to create a user or sign in produce alerts for the user
 - delete site - M&M
+- post edit currently empties post if not content added or deleted - M&M
