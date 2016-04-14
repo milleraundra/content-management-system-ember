@@ -1,12 +1,3 @@
-<form>
-  <div>
-    <label for="title">Site Title</label>
-    {{input value=title id="title"}}
-  </div>
-  <br>
-  <!-- <div>
-    <label for="admin">Admin Name</label>
-    {{input value=admin id="admin"}}
-  </div> -->
-  <button {{action 'save'}}>Submit</button>
-</form>
+{{paper-input label="Site Name" id="title" value=title}}
+{{paper-input textarea=true label="A brief description of what your site is about" id="description" value=description}}
+{{paper-button primary=true raised=true label="Save" action="save"}}

@@ -5,6 +5,7 @@ export default Ember.Component.extend({
     save() {
       var params = {
         title: this.get('title'),
+        description: this.get('description')
       };
       this.sendAction('save', params);
     }

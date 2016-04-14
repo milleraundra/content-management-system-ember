@@ -11,6 +11,7 @@ export default Ember.Route.extend({
       this.store.findRecord('user', admin).then(function(record) {
         var newSite = that.store.createRecord('site', {
           title: params.title,
+          description: params.description,
           admin: record
         });
         record.get('sites').addObject(newSite);

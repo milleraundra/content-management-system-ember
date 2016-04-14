@@ -1,3 +1,18 @@
-<h2>Admin Dashland</h2>
+{{#paper-toolbar}}
+  <div class="md-toolbar-tools">
+    {{#paper-sidenav-toggle as |toggle|}}
+      {{#paper-button target=toggle action="toggleMenu" icon-button=true}}{{paper-icon "menu"}}{{/paper-button}}
+    {{/paper-sidenav-toggle}}
+    <span class="md-breadcrumb-page">Admin Dashboard</span>
+  </div>
+{{/paper-toolbar}}
 
-{{admin-site-list site=model.sites}}
+{{#paper-content class="md-padding main-content"}}
+  {{#if model.sites}}
+  <h3>Here are all of your sites:</h3>
+  <p>Click a site to manage it.</p>
+    {{admin-site-list site=model.sites goToEditSite="goToEditSite"}}
+  {{else}}
+    <p>You have not created any sites, yet. {{paper-button primary=true raised=true label="Create One Now" action="transitionTo" param="new-site"}}</p>
+  {{/if}}
+{{/paper-content}}

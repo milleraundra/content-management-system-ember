@@ -8,5 +8,13 @@ export default Ember.Route.extend({
         equalTo: this.get('session').get('uid')
       })
     });
+  },
+  actions: {
+    transitionTo(param) {
+      this.transitionTo(param);
+    },
+    goToEditSite(site) {
+      this.transitionTo('edit-site', site.id)
+    }
   }
 });

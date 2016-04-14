@@ -11,7 +11,7 @@
     {{#paper-content}}
       {{#paper-list}}
         {{#if session.isAuthenticated}}
-          Logged in as {{session.currentUser.email}} {{paper-button label="Sign Out" action="signOut" warn=true }}
+          {{#paper-item}}<h5>Logged in as {{session.currentUser.email}}</h5> {{paper-button label="Log Out" action="signOut" warn=true raised=true}}{{/paper-item}}
           {{#paper-item action="transitionTo" param="admin"}}My Sites{{/paper-item}}
           {{#paper-item action="transitionTo" param="new-site"}}Create new site{{/paper-item}}
         {{else}}

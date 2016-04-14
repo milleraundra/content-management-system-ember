@@ -1,1 +1,14 @@
-{{new-site save="save"}}
+{{#paper-toolbar}}
+  <div class="md-toolbar-tools">
+    {{#paper-sidenav-toggle as |toggle|}}
+      {{#paper-button target=toggle action="toggleMenu" icon-button=true}}{{paper-icon "menu"}}{{/paper-button}}
+    {{/paper-sidenav-toggle}}
+    <span class="md-breadcrumb-page">Create a New Site</span>
+  </div>
+{{/paper-toolbar}}
+
+{{#paper-content class="md-padding"}}
+
+  {{new-site save="save"}}
+
+{{/paper-content}}
