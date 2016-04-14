@@ -13,6 +13,7 @@ Router.map(function() {
   this.authenticatedRoute('edit-site', {path: '/edit-site/:site_id'});
   this.route('site', {path: '/:site_id'});
   this.route('view-post', {path: '/view-post/:post_id'});
+  this.route('category');
 });
 
 export default Router;
