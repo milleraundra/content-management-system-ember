@@ -2,8 +2,8 @@
 - failed attempts to create a user or sign in produce alerts for the user
 - styles like crazy
 - comments on posts
-- delete site?
-- post edit currently empties post if not content added or deleted
+- delete site - M&M
+- post edit currently empties post if not content added or deleted - M&M
 
 
 DONE:
