@@ -1,4 +1,11 @@
-{{#link-to 'admin'}}Admin{{/link-to}} > {{model.title}}
+{{#paper-toolbar}}
+  <div class="md-toolbar-tools">
+    {{#paper-sidenav-toggle as |toggle|}}
+      {{#paper-button target=toggle action="toggleMenu" icon-button=true}}{{paper-icon "menu"}}{{/paper-button}}
+    {{/paper-sidenav-toggle}}
+    <span class="md-breadcrumb-page"><span class="clickable" {{action "transitionTo" "admin"}}>My Sites</span> {{paper-icon "keyboard-arrow-right"}} {{model.title}}</span>
+  </div>
+{{/paper-toolbar}}
 
 <h2>Site: {{model.title}}</h2>
 {{#if model.posts}}

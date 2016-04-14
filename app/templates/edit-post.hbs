@@ -1,3 +1,13 @@
-{{#link-to 'admin'}}Admin{{/link-to}} > {{#link-to 'edit-site' model.site}}{{model.site.title}}{{/link-to}} > {{model.title}}
+{{#paper-toolbar}}
+  <div class="md-toolbar-tools">
+    {{#paper-sidenav-toggle as |toggle|}}
+      {{#paper-button target=toggle action="toggleMenu" icon-button=true}}{{paper-icon "menu"}}{{/paper-button}}
+    {{/paper-sidenav-toggle}}
+    <span class="md-breadcrumb-page">
+      <span class="clickable" {{action "transitionTo" "admin"}}>My Sites</span> {{paper-icon "keyboard-arrow-right"}}
+      <span class="clickable" {{action "transitionToSite" model.site.id}}>{{model.site.title}}</span> {{paper-icon "keyboard-arrow-right"}} {{model.title}}
+    </span>
+  </div>
+{{/paper-toolbar}}
 
 {{edit-post post=model update="update" delete="delete"}}
