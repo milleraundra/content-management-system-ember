@@ -17,7 +17,6 @@ export default Ember.Route.extend({
         email: email,
         password: password
       }).then(function(data) {
-          console.log("Banana icecream");
           console.log(data.currentUser);
           this.transitionTo('admin');
       }, function(error){
