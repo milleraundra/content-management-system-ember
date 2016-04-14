@@ -54,6 +54,10 @@ export default Ember.Route.extend({
           });
         }
       });
+    },
+    accessDenied() {
+      alert("Access Denied. Please login or create an account");
+      return this.transitionTo('index');
     }
   }
 });
