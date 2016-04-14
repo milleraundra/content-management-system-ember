@@ -12,6 +12,7 @@ export default Ember.Route.extend({
         var newSite = that.store.createRecord('site', {
           title: params.title,
           description: params.description,
+          category: params.category,
           admin: record
         });
         record.get('sites').addObject(newSite);
