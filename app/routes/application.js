@@ -16,13 +16,12 @@ export default Ember.Route.extend({
         provider: provider,
         email: email,
         password: password
-      }, function(error, data) {
-        console.log(error);
-        console.log(data);
       }).then(function(data) {
           console.log("Banana icecream");
           console.log(data.currentUser);
           this.transitionTo('admin');
+      }, function(error){
+        alert(error);
       }.bind(this));
     },
 
@@ -54,6 +53,10 @@ export default Ember.Route.extend({
           });
         }
       });
+    },
+    accessDenied() {
+      alert("Access Denied. Please login or create an account");
+      return this.transitionTo('index');
     }
   }
 });
