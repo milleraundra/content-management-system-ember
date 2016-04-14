@@ -7,15 +7,22 @@
   </div>
 {{/paper-toolbar}}
 
-<h2>Site: {{model.title}}</h2>
-{{#if model.posts}}
-  <h3>Posts:</h3>
-  {{admin-post-list posts=model.posts}}
-{{else}}
-  <h3>This site has no posts yet.</h3>
-{{/if}}
-<br>
+{{#paper-content class="md-padding"}}
 
-{{#link-to 'new-post' model.id}}Add New Post{{/link-to}}
+  <h2>Site: {{model.title}}</h2>
+  <p>{{model.description}}</p>
+  {{paper-divider}}
+    {{#if model.posts}}
+      <h3>Posts:</h3>
+      <p><i>Click a post to edit it</i></p>
+      {{admin-post-list posts=model.posts goToEditPost="goToEditPost"}}
+    {{else}}
+      <h3>This site has no posts yet.</h3>
+    {{/if}}
+  <br>
 
-{{delete-site site=model delete="delete"}}
+  {{#paper-button primary=true raised=true action='newPost' param=model}}Add New Post{{/paper-button}}
+
+  {{delete-site site=model delete="delete"}}
+
+{{/paper-content}}

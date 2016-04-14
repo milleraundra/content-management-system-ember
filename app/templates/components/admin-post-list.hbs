@@ -1,5 +1,15 @@
-{{#each posts as |post|}}
-  <div>
-    {{#link-to 'edit-post' post}}{{post.title}} by {{post.author}}{{/link-to}}
-  </div>
-{{/each}}
+{{#paper-list}}
+  {{#each posts as |post|}}
+    {{#paper-item class="md-3-line" action="goToEditPost" param=post}}
+
+      {{paper-icon 'edit' size=2}}
+      <div class="md-list-item-text">
+        <h3>{{post.title}}</h3>
+        <p>
+          Posted by {{post.author}}
+        </p>
+      </div>
+    {{/paper-item}}
+    {{paper-divider}}
+  {{/each}}
+{{/paper-list}}

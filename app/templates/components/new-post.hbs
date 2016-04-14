@@ -1,26 +1,24 @@
-<h2>Add New Post</h2>
-<form>
-  <div>
-    <label for="title">Post Title</label>
-    {{input value=title id="title"}}
+{{#paper-toolbar}}
+  <div class="md-toolbar-tools">
+    {{#paper-sidenav-toggle as |toggle|}}
+      {{#paper-button target=toggle action="toggleMenu" icon-button=true}}{{paper-icon "menu"}}{{/paper-button}}
+    {{/paper-sidenav-toggle}}
+    <span class="md-breadcrumb-page">
+      <span class="clickable" {{action "transitionToSite" model.site.id}}>{{site.title}}</span>
+      {{paper-icon "keyboard-arrow-right"}}
+      New Post
+    </span>
   </div>
-  <br>
-  <div>
-    <label for="author">Author</label>
-    {{input value=author id="author"}}
-  </div>
-  <br>
-  <div>
-    <label for="image">Image URL</label>
-    {{input value=image id="image"}}
-  </div>
-  <br>
-  <div>
-    <label for="content">Content</label>
-    {{textarea value=content id="content"}}
-  </div>
+{{/paper-toolbar}}
 
-  <button {{action 'save'}}>Publish</button>
-</form>
+{{#paper-content class="md-padding"}}
+  <h2>Create your new post</h2>
+  {{paper-input label="Post Title" value=title id="title"}}
+    <div layout="" layout-sm="column">
+      {{paper-input label="Author" flex=50 value=author id="author"}}
+      {{paper-input label="Image URL" flex=50 value=image id="image"}}
+    </div>
+    {{paper-input textarea=true attr-rows="4" label="Content" value=content id="content"}}
 
-<h3>(add ability to add categories)</h3>
+  {{#paper-button primary=true raised=true action='save'}}Publish{{/paper-button}}
+{{/paper-content}}

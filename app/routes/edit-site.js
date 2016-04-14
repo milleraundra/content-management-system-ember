@@ -5,6 +5,9 @@ export default Ember.Route.extend({
     return this.store.findRecord('site', params.site_id);
   },
   actions: {
+    newPost(site) {
+      this.transitionTo('/' + site.id + '/new-post/')
+    },
     delete(site) {
       var post_deletions = site.get('posts').map(function(post) {
         return post.destroyRecord();
