@@ -9,6 +9,9 @@ export default Ember.Component.extend({
         comment: this.get('comment'),
         post: this.get('post')
       };
+      this.set('name', '');
+      this.set('email', '');
+      this.set('comment', '');
       this.sendAction('submit', params);
     }
   }
