@@ -2,11 +2,27 @@
   <div>
     <label for="title">Site Title</label>
     {{input value=title id="title"}}
+    {{#paper-select placeholder="Category" model=category}}
+      {{#paper-option value="Food"}}
+        <p>Food</p>
+      {{/paper-option}}
+      {{#paper-option value="Animals"}}
+        <p>Animals</p>
+      {{/paper-option}}
+      {{#paper-option value="Fitness"}}
+        <p>Fitness</p>
+      {{/paper-option}}
+      {{#paper-option value="Politics"}}
+        <p>Politics</p>
+      {{/paper-option}}
+      {{#paper-option value="Lifestyle"}}
+        <p>Lifestyle</p>
+      {{/paper-option}}
+      {{#paper-option value="Miscellaneous"}}
+        <p>Miscellaneous</p>
+      {{/paper-option}}
+    {{/paper-select}}
   </div>
   <br>
-  <!-- <div>
-    <label for="admin">Admin Name</label>
-    {{input value=admin id="admin"}}
-  </div> -->
   <button {{action 'save'}}>Submit</button>
 </form>
