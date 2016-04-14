@@ -11,17 +11,17 @@
     {{#paper-content}}
       {{#paper-list}}
         {{#if session.isAuthenticated}}
-          {{#paper-item}}Logged in as {{session.currentUser.email}}{{/paper-item}}
-          {{#paper-button warn=true action="signOut"}}Sign out{{/paper-button}}
+          Logged in as {{session.currentUser.email}} {{paper-button label="Sign Out" action="signOut" warn=true }}
           {{#paper-item action="transitionTo" param="admin"}}My Sites{{/paper-item}}
           {{#paper-item action="transitionTo" param="new-site"}}Create new site{{/paper-item}}
         {{else}}
-          {{user-login signIn="signIn"}}
-          {{new-user createUser="createUser"}}
+          {{create-signin signIn="signIn" createUser="createUser"}}
         {{/if}}
         {{paper-divider}}
         {{#paper-item action="transitionTo" param="index"}}Home{{/paper-item}}
-
+        {{#paper-item action="transitionTo" param="index"}}Other Link{{/paper-item}}
+        {{#paper-item action="transitionTo" param="index"}}Other Link{{/paper-item}}
+        {{#paper-item action="transitionTo" param="index"}}Other Link{{/paper-item}}
       {{/paper-list}}
     {{/paper-content}}
   {{/paper-sidenav}}
