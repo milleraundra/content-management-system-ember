@@ -3,4 +3,13 @@
 body {
   font-family: 'Roboto', sans-serif;
   background-color: lighten(#9DA4AD, 30%);
+  height: 100%;
+}
+
+#ember500 {
+  height: 100%;
+}
+
+md-sidenav {
+  height: 70em;
 }

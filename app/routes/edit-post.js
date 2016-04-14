@@ -5,14 +5,9 @@ export default Ember.Route.extend({
     return this.store.findRecord('post', params.post_id);
   },
   actions: {
-    update(post, params) {
-      Object.keys(params).forEach(function(key) {
-        if(params[key]!==undefined) {
-          post.set(key, params[key]);
-        }
-      });
+    update(post) {
       post.save();
-      this.transitionTo('admin');
+      this.transitionTo('edit-site', post.site.id);
     },
     delete(post) {
       post.destroyRecord();
