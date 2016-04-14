@@ -1,7 +1,12 @@
-# Cms-ember
+# Blogamole
 
-This README outlines the details of collaborating on this Ember application.
-A short introduction of this app could easily go here.
+#### An Ember Blogging Application, 4/15/2016
+
+#### By: Aundra Miller, Chris Young, Mary Warrington, and Michelle Brecunier
+
+## Description
+
+Blogamole is a blogging platform that allows users to create and read blogs. Users can manage multiple blog sites under their account. Users can browse through other user-created blogs by category and leave comments on posts. This site was created for a JavaScript project at Epicodus.
 
 ## Prerequisites
 
@@ -25,23 +30,9 @@ You will need the following things properly installed on your computer.
 * `ember server`
 * Visit your app at [http://localhost:4200](http://localhost:4200).
 
-### Code Generators
-
-Make use of the many generators for code, try `ember help generate` for more details
-
-### Running Tests
-
-* `ember test`
-* `ember test --server`
-
-### Building
-
-* `ember build` (development)
-* `ember build --environment production` (production)
-
 ### Deploying
 
-Specify what it takes to deploy your app.
+Instructions to come
 
 ## Further Reading / Useful Links
 
