@@ -8,6 +8,12 @@ export default Ember.Route.extend({
     newPost(site) {
       this.transitionTo('/' + site.id + '/new-post/')
     },
+
+    goToEditPost(post) {
+      this.transitionTo('edit-post', post.id);
+    },
+
+
     delete(site) {
       var post_deletions = site.get('posts').map(function(post) {
         return post.destroyRecord();
