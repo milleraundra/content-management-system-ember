@@ -1,10 +1,15 @@
-
-  - if I click a site, I'm taken to the public view of that site (fully functional)
-  - IF I'm already logged in as an admin, there is a button "Go to Admin" to take me to Admin Dashland
-    - IF I click on a post, I'm taken to the edit post page (edit-post).
+- prevent users from manually accessing the admin route
+- failed attempts to create a user or sign in produce alerts for the user
+- styles like crazy
+- comments on posts
+- delete site?
+- post edit currently empties post if not content added or deleted
 
 
 DONE:
 - As ANY user, I want to visit the index and see a list of all sites and a button for admin login.
 - As an admin user, I can click "admin login" (component), login OR create a new account (different button), and arrive at my Admin Dashland (route) listing MY sites (admin-site-list), and a button to add a new site (new-site).
 - IF I click a site in Admin Dashland, I'm taken to a route listing that site's posts (admin-post-list), and the option to add a new post (new-post), and a button to edit the site (edit-site).
+- if I click a site, I'm taken to the public view of that site (fully functional)
+- IF I'm already logged in as an admin, there is a button "Go to Admin" to take me to Admin Dashland
+- IF I click on a post, I'm taken to the edit post page (edit-post).
