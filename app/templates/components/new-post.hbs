@@ -1,24 +1,9 @@
-{{#paper-toolbar}}
-  <div class="md-toolbar-tools">
-    {{#paper-sidenav-toggle as |toggle|}}
-      {{#paper-button target=toggle action="toggleMenu" icon-button=true}}{{paper-icon "menu"}}{{/paper-button}}
-    {{/paper-sidenav-toggle}}
-    <span class="md-breadcrumb-page">
-      <span class="clickable" {{action "transitionToSite" model.site.id}}>{{site.title}}</span>
-      {{paper-icon "keyboard-arrow-right"}}
-      New Post
-    </span>
+<h2>Create your new post</h2>
+{{paper-input label="Post Title" value=title id="title"}}
+  <div layout="" layout-sm="column">
+    {{paper-input label="Author" flex=50 value=author id="author"}}
+    {{paper-input label="Image URL" flex=50 value=image id="image"}}
   </div>
-{{/paper-toolbar}}
+  {{paper-input textarea=true attr-rows="4" label="Content" value=content id="content"}}
 
-{{#paper-content class="md-padding"}}
-  <h2>Create your new post</h2>
-  {{paper-input label="Post Title" value=title id="title"}}
-    <div layout="" layout-sm="column">
-      {{paper-input label="Author" flex=50 value=author id="author"}}
-      {{paper-input label="Image URL" flex=50 value=image id="image"}}
-    </div>
-    {{paper-input textarea=true attr-rows="4" label="Content" value=content id="content"}}
-
-  {{#paper-button primary=true raised=true action='save'}}Publish{{/paper-button}}
-{{/paper-content}}
+{{#paper-button primary=true raised=true action='save'}}Publish{{/paper-button}}
