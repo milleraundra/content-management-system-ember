@@ -6,7 +6,8 @@ export default Ember.Route.extend({
   },
   actions: {
     goToSite(site) {
-      this.transitionTo("/" + site.id)
+      console.log(site.id);
+      this.transitionTo("/" + site.id);
     },
   }
 });

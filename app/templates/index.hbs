@@ -11,19 +11,6 @@
   <h1>Hello, there.</h1>
   <p>You have arrived at our thing, now feel free to cruise around and click on stuff and things. Blahber. It's a thing. All of the sites that our users have created are below.</p>
   <h3>Browse Sites:</h3>
-  {{#paper-list}}
-    {{#each model as |site|}}
-      {{#paper-item class="md-3-line" action="goToSite" param=site}}
-        {{paper-icon 'web' size=3}}
-        <div class="md-list-item-text">
-          <h3>{{site.title}}</h3>
-          <h4>By {{site.admin.username}}</h4>
-          <p>
-            {{site.description}}
-          </p>
-        </div>
-      {{/paper-item}}
-      {{paper-divider inset=true}}
-    {{/each}}
-  {{/paper-list}}
+
+  {{site-list model=model goToSite="goToSite"}}
 {{/paper-content}}
