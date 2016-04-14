@@ -6,7 +6,8 @@ export default Ember.Component.extend({
       var params = {
         title: this.get('title'),
         author: this.get('author'),
-        content: this.get('content')
+        content: this.get('content'),
+        image: this.get('image')
       };
       this.sendAction('update', post, params);
     },

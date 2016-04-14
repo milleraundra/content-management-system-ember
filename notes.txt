@@ -1,5 +1,7 @@
 - styles like crazy
 - comments on posts
+- posts have dates and imges
+- helpers or computed properties for date
 
 
 DONE:
