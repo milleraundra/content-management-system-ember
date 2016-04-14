@@ -4,5 +4,8 @@ export default DS.Model.extend({
   title: DS.attr(),
   content: DS.attr(),
   author: DS.attr(),
-  site: DS.belongsTo('site', { async: true })
+  site: DS.belongsTo('site', { async: true }),
+  comments: DS.hasMany('comment', { async: true }),
+  date: DS.attr(),
+  image: DS.attr()
 });
