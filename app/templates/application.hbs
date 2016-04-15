@@ -9,24 +9,31 @@
     {{/paper-toolbar}}
 
     {{#paper-content}}
+
+      {{#if session.isAuthenticated}}
+        <div id="account-header">
+          {{paper-icon "account-circle" class="md-menu-origin" size=3}}
+          {{#paper-subheader class="md-no-sticky"}}
+            {{session.currentUser.email}}
+          {{/paper-subheader}}
+        </div>
+        {{#paper-item action="transitionTo" param="admin"}}{{paper-icon "account-box" size="sm"}}My Sites{{/paper-item}}
+        {{#paper-item action="transitionTo" param="new-site"}}{{paper-icon "add-to-photos" size="sm"}}Create new site{{/paper-item}}
+        {{#paper-item action="signOut" id="log-out-button"}}{{paper-icon 'clear' size="sm" warn=true}}Log Out{{/paper-item}}
+      {{else}}
+      {{create-signin signIn="signIn" createUser="createUser"}}
+      {{/if}}
+
       {{#paper-list}}
-        {{#if session.isAuthenticated}}
-          {{#paper-item}}<h5>Logged in as {{session.currentUser.email}}</h5>{{/paper-item}}
-          {{paper-divider}}
-          {{#paper-item action="transitionTo" param="admin"}}{{paper-icon "account-box" size="sm"}}My Sites{{/paper-item}}
-          {{#paper-item action="transitionTo" param="new-site"}}{{paper-icon "add-to-photos" size="sm"}}Create new site{{/paper-item}}
-        {{else}}
-          {{create-signin signIn="signIn" createUser="createUser"}}
-        {{/if}}
         {{paper-divider}}
-        {{#paper-item action="transitionTo" param="index"}}{{paper-icon "home" size="sm"}}Home{{/paper-item}}
-        {{paper-divider}}
+        {{#paper-subheader class="md-no-sticky"}}Site Categories:{{/paper-subheader}}
+        {{#paper-item action="transitionTo" param="index"}}{{paper-icon "home" size="sm"}}All{{/paper-item}}
         {{#paper-item action="toCategory" param="Food"}}{{paper-icon "local-dining" size="sm"}}Food{{/paper-item}}
         {{#paper-item action="toCategory" param="Animals"}}{{paper-icon "adb" size="sm"}}Animals{{/paper-item}}
         {{#paper-item action="toCategory" param="Fitness"}}{{paper-icon "directions-bike" size="sm"}}Fitness{{/paper-item}}
         {{#paper-item action="toCategory" param="Politics"}}{{paper-icon "account-balance" size="sm"}}Politics{{/paper-item}}
         {{#paper-item action="toCategory" param="Lifestyle"}}{{paper-icon "supervisor-account" size="sm"}}Lifestyle{{/paper-item}}
-        {{#paper-item action="toCategory" param="Miscellaneous"}}{{paper-icon "star" size="sm"}}Miscellaneous{{/paper-item}}        {{#paper-item}}{{paper-button label="Log Out" action="signOut" warn=true raised=true}}{{/paper-item}}
+        {{#paper-item action="toCategory" param="Miscellaneous"}}{{paper-icon "star" size="sm"}}Miscellaneous{{/paper-item}}
       {{/paper-list}}
     {{/paper-content}}
   {{/paper-sidenav}}
