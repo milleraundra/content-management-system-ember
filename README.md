@@ -20,25 +20,26 @@ You will need the following things properly installed on your computer.
 
 ## Installation
 
-* `git clone <repository-url>` this repository
+* `git clone` [this repository] (https://github.com/milleraundra/content-management-system-ember.git)
 * change into the new directory
 * `npm install`
 * `bower install`
 
 ## Running / Development
 
-* `ember server`
+* `ember s`
 * Visit your app at [http://localhost:4200](http://localhost:4200).
 
-### Deploying
+## Known Bugs
 
-Instructions to come
+* Currently, the helper to display star ratings only works on the first load. After a refresh, the rating is undefined and returns one star only.
 
-## Further Reading / Useful Links
+## Contact
 
-* [ember.js](http://emberjs.com/)
-* [ember-cli](http://www.ember-cli.com/)
-* Development Browser Extensions
-  * [ember inspector for chrome](https://chrome.google.com/webstore/detail/ember-inspector/bmdblncegkenkacieihfhpjfppoconhi)
-  * [ember inspector for firefox](https://addons.mozilla.org/en-US/firefox/addon/ember-inspector/)
+_If you have any questions, concerns, or feedback, please contact the author through_ [gitHub](https://github.com/milleraundra/content-management-system-ember.git).
 
+### License
+
+MIT License.
+
+Copyright (c) 2016 **_Aundra Miller, Chris Young, Mary Warrington, and Michelle Brecunier_**
