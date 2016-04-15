@@ -2,16 +2,18 @@ import Ember from 'ember';
 
 export default Ember.Component.extend({
   actions: {
-    update(post) {
+    update() {
       var params = {
-        title: this.get('title'),
-        author: this.get('author'),
-        content: this.get('content'),
-        image: this.get('image')
+        title: this.get('post.title'),
+        author: this.get('post.author'),
+        content: this.get('post.content'),
+        image: this.get('post.image')
       };
+      var post = this.get('post');
       this.sendAction('update', post, params);
     },
-    delete(post) {
+    delete() {
+      var post = this.get('post');
       this.sendAction('delete', post);
     }
   }
