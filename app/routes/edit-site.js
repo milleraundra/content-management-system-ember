@@ -6,7 +6,7 @@ export default Ember.Route.extend({
   },
   actions: {
     newPost(site) {
-      this.transitionTo('/' + site.id + '/new-post/')
+      this.transitionTo('/' + site.id + '/new-post/');
     },
 
     goToEditPost(post) {

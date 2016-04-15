@@ -14,7 +14,7 @@ export default Ember.Route.extend({
       this.transitionTo(param);
     },
     goToEditSite(site) {
-      this.transitionTo('edit-site', site.id)
+      this.transitionTo('edit-site', site.id);
     }
   }
 });
