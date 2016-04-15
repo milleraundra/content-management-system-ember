@@ -9,6 +9,7 @@
 
 {{view-post post=model}}
 
-<h3>Comments:</h3>
-{{comment-list comments = model.comments }}
 {{new-comment submit="submit" post=model}}
+<hr>
+<h2>Comments:</h2>
+{{comment-list comments = model.comments }}

@@ -1,18 +1,7 @@
-<h2>Add A Comment</h2>
-<form>
-  <div class="form-group">
-    <label for="name">Name</label>
-    {{input value=name id="name"}}
-  </div>
+<h2>Add A Comment {{paper-icon "message" size="md"}}</h2>
 
-  <div class="form-group">
-    <label for="email">Email</label>
-    {{input value=email id="email"}}
-  </div>
+{{paper-input label="Name" id="name" value=name icon="person" icon-class="name"}}
+{{paper-input label="Email" id="email" value=email icon="email" icon-class="email"}}
+{{paper-input textarea=true attr-rows='4' label="Comment" id="comment" value=comment icon="message" icon-class="comment"}}
 
-  <div class="form-group">
-    <label for="comment">Comment</label>
-    {{input value=comment id="comment"}}
-  </div>
-  <button {{action 'submit'}}>Submit</button>
-</form>
+{{paper-button primary=true raised=true label='Submit' action='submit'}}
