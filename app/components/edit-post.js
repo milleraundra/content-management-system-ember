@@ -12,7 +12,8 @@ export default Ember.Component.extend({
       var post = this.get('post');
       this.sendAction('update', post, params);
     },
-    delete(post) {
+    delete() {
+      var post = this.get('post');
       this.sendAction('delete', post);
     }
   }
