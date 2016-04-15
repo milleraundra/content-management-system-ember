@@ -1,4 +1,14 @@
+{{#paper-toolbar}}
+  <div class="md-toolbar-tools">
+    {{#paper-sidenav-toggle as |toggle|}}
+      {{#paper-button target=toggle action="toggleMenu" icon-button=true}}{{paper-icon "menu"}}{{/paper-button}}
+    {{/paper-sidenav-toggle}}
+    {{#link-to 'site' model.site.id}}<span class="md-breadcrumb-page">{{model.site.title}}</span>{{/link-to}}
+  </div>
+{{/paper-toolbar}}
+
 {{view-post post=model}}
 
+<h3>Comments:</h3>
 {{comment-list comments = model.comments }}
 {{new-comment submit="submit" post=model}}
