@@ -32,7 +32,7 @@ You will need the following things properly installed on your computer.
 
 ## Known Bugs
 
-* Currently, the helper to display star ratings only works on the first load. After a refresh, the rating is undefined and returns one star only.
+* There are a few form display issues, where text overwrites labels.
 
 ## Contact
 
