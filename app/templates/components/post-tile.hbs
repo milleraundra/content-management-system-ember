@@ -1,9 +1,0 @@
-{{#paper-card}}
-  {{#paper-card-content}}
-  {{#link-to 'view-post' post}}<h2>{{post.title}}</h2>{{/link-to}}
-    <h4>Written by {{post.author}}</h4>
-    <h4>Published: {{moment-format post.date}}</h4>
-    <img class="post-image" src="{{post.image}}" alt="image for {{post.title}}">
-    <p>{{post.content}}</p>
-  {{/paper-card-content}}
-{{/paper-card}}
