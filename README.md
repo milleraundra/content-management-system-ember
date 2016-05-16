@@ -4,6 +4,8 @@
 
 #### By: Aundra Miller, Chris Young, Mary Warrington, and Michelle Brecunier
 
+##### [Check out the hosted version!] (https://ember-cms.firebaseapp.com/)
+
 ## Description
 
 Blogamole is a blogging platform that allows users to create and read blogs. Users can manage multiple blog sites under their account. Users can browse through other user-created blogs by category and leave comments on posts. This site was created for a JavaScript project at Epicodus.
